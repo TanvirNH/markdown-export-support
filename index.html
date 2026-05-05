@@ -1,519 +1,546 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Export - Support</title>
-    <style>
-        :root {
-            --primary: #4F46E5;
-            --primary-hover: #4338CA;
-            --primary-light: #818CF8;
-            --background: #0F172A;
-            --surface: #1E293B;
-            --text-main: #F1F5F9;
-            --text-secondary: #CBD5E1;
-            --text-muted: #94A3B8;
-            --border: rgba(71, 85, 105, 0.3);
-            --accent: #06B6D4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="color-scheme" content="dark" />
+  <title>Support & FAQ — Markdown Export for Mac</title>
+  <meta name="description" content="Get help with Markdown Export for Mac. Frequently asked questions about PDF, Word, and PNG exports, file formats, dark mode, and more." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tanvirnh.github.io/markdown-export/support.html" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Markdown Export" />
+  <meta property="og:title" content="Support & FAQ — Markdown Export for Mac" />
+  <meta property="og:description" content="Answers to common questions about Markdown Export for Mac, plus ways to contact support." />
+  <meta property="og:url" content="https://tanvirnh.github.io/markdown-export/support.html" />
 
-        html, body {
-            width: 100%;
-            height: 100%;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, var(--background) 0%, #0D1117 100%);
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What file formats can I export to?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export supports exporting your documents to PDF, Word (.docx), and PNG image formats. Simply write your markdown and click the export button for your desired format." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I open and edit existing markdown files?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use the \"Open .md\" button in the sidebar to open any existing markdown file. The content will be loaded into the editor and you can make changes, then export in your desired format." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I adjust text formatting in exports?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the control panel on the left sidebar. You can change the font face and adjust text size (8-16pt) to customize how your export looks." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use images in my markdown?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use markdown image syntax: ![Alt text](image-url). You can use external image URLs. The app will render them in the preview and include them in your exports." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a dark mode?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! Click the dark mode toggle button (◑) in the top right of the sidebar to switch between light and dark themes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the app save my documents automatically?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export doesn't auto-save, but you can export your work anytime. We recommend using the \"Open .md\" button to load previously saved markdown files from your computer." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I create multi-page documents?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes! The preview shows page breaks automatically. You can see where page 1 ends and page 2 begins, so you can organize your content accordingly before exporting." }
+      },
+      {
+        "@type": "Question",
+        "name": "What markdown syntax is supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export supports standard markdown including headers (# ## ###), bold (**text**), italic (*text*), lists, code blocks, tables, links, images, blockquotes, and more." }
+      }
+    ]
+  }
+  </script>
 
-        /* Header */
-        header {
-            border-bottom: 1px solid var(--border);
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 24px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface-2: #16161f;
+      --surface-3: #1c1c28;
+      --border: rgba(255,255,255,0.07);
+      --border-strong: rgba(255,255,255,0.12);
+      --accent: #6c63ff;
+      --accent-2: #a78bfa;
+      --accent-3: #38bdf8;
+      --text: #f0f0f8;
+      --text-dim: #b8b8cc;
+      --muted: #8888aa;
+      --green: #34d399;
+      --radius-sm: 10px;
+      --radius: 16px;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
+    .skip-link {
+      position: absolute; left: -9999px; top: 8px;
+      background: var(--accent); color: #fff;
+      padding: 8px 16px; border-radius: 8px; font-weight: 600; z-index: 1000;
+    }
+    .skip-link:focus { left: 8px; }
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    /* NAV */
+    nav.primary {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .nav-logo img { width: 34px; height: 34px; border-radius: 8px; }
+    .nav-logo span { font-weight: 700; font-size: 16px; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--text-dim); text-decoration: none;
+      font-weight: 500; font-size: 14px;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); outline: none; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent-2);
+      padding: 8px 16px; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 13px;
+      transition: background .2s;
+    }
+    .nav-cta:hover, .nav-cta:focus-visible { background: rgba(108,99,255,0.22); outline: none; }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+    /* HERO */
+    .hero {
+      padding: 90px 24px 40px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(108,99,255,0.14) 0%, transparent 65%);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent-2);
+      padding: 6px 14px; border-radius: 50px;
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.25);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.02;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #f0f0f8 0%, #a78bfa 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      font-size: 18px; color: var(--text-dim);
+      max-width: 560px; margin: 0 auto; line-height: 1.6;
+    }
 
-        /* Main Container */
-        main {
-            flex: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            width: 100%;
-        }
+    main { max-width: 1120px; margin: 0 auto; padding: 40px 24px 80px; width: 100%; flex: 1; }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 80px;
-        }
+    /* Support Cards */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-bottom: 100px;
+    }
+    .support-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      display: flex; flex-direction: column;
+    }
+    .support-card:hover {
+      border-color: rgba(108,99,255,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .support-card-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 20px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.25);
+    }
+    .support-card-icon.email { background: rgba(56,189,248,0.12); border-color: rgba(56,189,248,0.25); }
+    .support-card-icon.docs { background: rgba(167,139,250,0.12); border-color: rgba(167,139,250,0.25); }
+    .support-card-icon.bug { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.25); }
 
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 16px;
-            font-weight: 700;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .support-card h3 {
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 10px; letter-spacing: -0.3px;
+    }
+    .support-card p {
+      color: var(--text-dim); font-size: 14.5px;
+      line-height: 1.65; margin-bottom: 24px;
+      flex: 1;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 50px;
+      font-weight: 600; font-size: 14px; text-decoration: none;
+      transition: transform .2s, background .2s, box-shadow .2s;
+      border: 1px solid transparent;
+      cursor: pointer; width: 100%;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      box-shadow: 0 6px 20px rgba(108,99,255,0.35);
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(108,99,255,0.5); outline: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+    .btn-secondary:hover, .btn-secondary:focus-visible {
+      background: var(--surface-3);
+      border-color: rgba(108,99,255,0.4); outline: none;
+    }
 
-        .hero p {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
+    /* FAQ */
+    .faq-section { margin-bottom: 40px; }
+    .faq-section-header { text-align: center; margin-bottom: 48px; }
+    .faq-section-header p.section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent-2);
+      margin-bottom: 14px;
+    }
+    .faq-section-header h2 {
+      font-size: clamp(32px, 4.5vw, 46px);
+      font-weight: 800; letter-spacing: -1px; line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .faq-section-header p.sub {
+      color: var(--text-dim); font-size: 16px;
+      max-width: 520px; margin: 0 auto;
+    }
 
-        /* Support Cards Grid */
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-bottom: 80px;
-        }
+    .faq-container { max-width: 780px; margin: 0 auto; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .faq-item:hover { border-color: var(--border-strong); }
+    .faq-item.active {
+      border-color: rgba(108,99,255,0.4);
+      background: var(--surface-2);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--text);
+      user-select: none;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-family: inherit;
+      transition: color .2s;
+    }
+    .faq-question:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .faq-toggle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(108,99,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--accent-2);
+      transition: transform 0.3s ease, background .2s;
+      flex-shrink: 0;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+      background: rgba(108,99,255,0.25);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 22px;
+      color: var(--text-dim);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer { max-height: 400px; }
 
-        .support-card {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center;
-        }
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      color: var(--muted); font-size: 14px;
+    }
+    footer a { color: var(--text-dim); text-decoration: none; transition: color .2s; }
+    footer a:hover, footer a:focus-visible { color: var(--text); outline: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 
-        .support-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-            transform: translateY(-4px);
-        }
+    @media screen and (max-width: 768px) {
+      nav.primary { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .hero { padding: 70px 20px 30px; }
+      main { padding: 30px 20px 60px; }
+      .support-grid { grid-template-columns: 1fr; }
+      .support-card { padding: 28px 24px; }
+      footer { flex-direction: column; text-align: center; padding: 32px 20px; }
+      .footer-links { justify-content: center; }
+    }
 
-        .support-card-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .support-card h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .support-card p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-size: 15px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            border-radius: 10px;
-            border: none;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 100%;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(79, 70, 229, 0.2);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin-bottom: 80px;
-        }
-
-        .faq-section h2 {
-            font-size: 40px;
-            margin-bottom: 48px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .faq-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: var(--primary);
-            background: rgba(30, 41, 59, 0.6);
-        }
-
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--text-main);
-            user-select: none;
-        }
-
-        .faq-toggle {
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 20px 20px 20px;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            background: rgba(30, 41, 59, 0.3);
-            padding: 48px 24px;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            main {
-                padding: 48px 20px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .nav-links {
-                gap: 16px;
-                font-size: 14px;
-            }
-
-            .support-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .faq-section h2 {
-                font-size: 32px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .support-card {
-                padding: 24px;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .faq-answer { transition: none; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">Markdown Export</a>
-            <ul class="nav-links">
-                <li><a href="#support">Support</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="mailto:tanvir4talk+appsupport@gmail.com" class="btn btn-secondary">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>How Can We Help?</h1>
-            <p>Get support for Markdown Export. We're here to help you with any questions or issues.</p>
-        </section>
+<a href="#main" class="skip-link">Skip to content</a>
 
-        <!-- Support Cards -->
-        <section id="support" class="support-grid">
-            <!-- Email Support -->
-            <div class="support-card">
-                <div class="support-card-icon">✉️</div>
-                <h3>Email Support</h3>
-                <p>Have a question or need help? Send us an email and we'll get back to you as soon as possible.</p>
-                <a href="mailto:tanvir4talk+appsupport@gmail.com" class="btn btn-primary">Send Email</a>
-            </div>
+<nav class="primary" aria-label="Primary">
+  <a href="index.html" class="nav-logo">
+    <img src="icon.png" alt="" onerror="this.style.display='none'" />
+    <span>Markdown Export</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://tanvirnh.github.io/markdown-export-privacy-policy/" target="_blank" rel="noopener">Privacy</a></li>
+  </ul>
+  <a href="mailto:tanvir4talk+appsupport@gmail.com" class="nav-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Contact
+  </a>
+</nav>
 
-            <!-- Documentation -->
-            <div class="support-card">
-                <div class="support-card-icon">📚</div>
-                <h3>Documentation</h3>
-                <p>Learn how to use all features of Markdown Export with our detailed guides and tutorials.</p>
-                <a href="#faq" class="btn btn-secondary">View Docs</a>
-            </div>
+<section class="hero">
+  <span class="eyebrow">Support</span>
+  <h1>How Can We Help?</h1>
+  <p class="hero-sub">Get support for Markdown Export. We're here to help you with any questions or issues.</p>
+</section>
 
-            <!-- Report Bug -->
-            <div class="support-card">
-                <div class="support-card-icon">🐛</div>
-                <h3>Report a Bug</h3>
-                <p>Found an issue? Let us know at tanvir4talk+appsupport@gmail.com and we'll fix it right away.</p>
-                <a href="mailto:tanvir4talk+appsupport@gmail.com?subject=Bug Report&body=Please describe the bug you found..." class="btn btn-secondary">Report Bug</a>
-            </div>
-        </section>
+<main id="main">
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What file formats can I export to?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Markdown Export supports exporting your documents to PDF, Word (.docx), and PNG image formats. Simply write your markdown and click the export button for your desired format.</p>
-                    </div>
-                </div>
+  <section id="support" class="support-grid" aria-label="Support options">
+    <article class="support-card">
+      <div class="support-card-icon email" aria-hidden="true">✉️</div>
+      <h3>Email Support</h3>
+      <p>Have a question or need help? Send us an email and we'll get back to you as soon as possible.</p>
+      <a href="mailto:tanvir4talk+appsupport@gmail.com" class="btn btn-primary">Send Email</a>
+    </article>
 
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I open and edit existing markdown files?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! Use the "Open .md" button in the sidebar to open any existing markdown file. The content will be loaded into the editor and you can make changes, then export in your desired format.</p>
-                    </div>
-                </div>
+    <article class="support-card">
+      <div class="support-card-icon docs" aria-hidden="true">📚</div>
+      <h3>Documentation</h3>
+      <p>Learn how to use all features of Markdown Export with our detailed guides and tutorials.</p>
+      <a href="#faq" class="btn btn-secondary">View Docs</a>
+    </article>
 
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do I adjust text formatting in exports?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Use the control panel on the left sidebar. You can change the font face and adjust text size (8-16pt) to customize how your export looks.</p>
-                    </div>
-                </div>
+    <article class="support-card">
+      <div class="support-card-icon bug" aria-hidden="true">🐛</div>
+      <h3>Report a Bug</h3>
+      <p>Found an issue? Let us know at tanvir4talk+appsupport@gmail.com and we'll fix it right away.</p>
+      <a href="mailto:tanvir4talk+appsupport@gmail.com?subject=Bug%20Report&body=Please%20describe%20the%20bug%20you%20found..." class="btn btn-secondary">Report Bug</a>
+    </article>
+  </section>
 
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I use images in my markdown?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! Use markdown image syntax: ![Alt text](image-url). You can use external image URLs. The app will render them in the preview and include them in your exports.</p>
-                    </div>
-                </div>
+  <section id="faq" class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-section-header">
+      <p class="section-label">FAQ</p>
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <p class="sub">Everything you need to know about Markdown Export.</p>
+    </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is there a dark mode?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! Click the dark mode toggle button (◑) in the top right of the sidebar to switch between light and dark themes.</p>
-                    </div>
-                </div>
+    <div class="faq-container">
 
-                <!-- FAQ Item 6 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Does the app save my documents automatically?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Markdown Export doesn't auto-save, but you can export your work anytime. We recommend using the "Open .md" button to load previously saved markdown files from your computer.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 7 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I create multi-page documents?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! The preview shows page breaks automatically. You can see where page 1 ends and page 2 begins, so you can organize your content accordingly before exporting.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 8 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What markdown syntax is supported?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Markdown Export supports standard markdown including headers (# ## ###), bold (**text**), italic (*text*), lists, code blocks, tables, links, images, blockquotes, and more.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="mailto:tanvir4talk+appsupport@gmail.com">Email</a>
-                <span>•</span>
-                <a href="https://github.com">GitHub</a>
-                <span>•</span>
-                <a href="#support">Support</a>
-            </div>
-            <p>&copy; 2026 Tanvir N Hasan. All rights reserved.</p>
-            <p style="font-size: 12px; margin-top: 8px;">Questions? Contact us at <strong>tanvir4talk+appsupport@gmail.com</strong></p>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+          <span>What file formats can I export to?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-1" role="region">
+          <div class="faq-answer-inner">
+            <p>Markdown Export supports exporting your documents to PDF, Word (.docx), and PNG image formats. Simply write your markdown and click the export button for your desired format.</p>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+          <span>Can I open and edit existing markdown files?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-2" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes! Use the "Open .md" button in the sidebar to open any existing markdown file. The content will be loaded into the editor and you can make changes, then export in your desired format.</p>
+          </div>
+        </div>
+      </div>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-    </script>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+          <span>How do I adjust text formatting in exports?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-3" role="region">
+          <div class="faq-answer-inner">
+            <p>Use the control panel on the left sidebar. You can change the font face and adjust text size (8-16pt) to customize how your export looks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+          <span>Can I use images in my markdown?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-4" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes! Use markdown image syntax: ![Alt text](image-url). You can use external image URLs. The app will render them in the preview and include them in your exports.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+          <span>Is there a dark mode?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-5" role="region">
+          <div class="faq-answer-inner">
+            <p>Absolutely! Click the dark mode toggle button (◑) in the top right of the sidebar to switch between light and dark themes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+          <span>Does the app save my documents automatically?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-6" role="region">
+          <div class="faq-answer-inner">
+            <p>Markdown Export doesn't auto-save, but you can export your work anytime. We recommend using the "Open .md" button to load previously saved markdown files from your computer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+          <span>Can I create multi-page documents?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-7" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes! The preview shows page breaks automatically. You can see where page 1 ends and page 2 begins, so you can organize your content accordingly before exporting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+          <span>What markdown syntax is supported?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-8" role="region">
+          <div class="faq-answer-inner">
+            <p>Markdown Export supports standard markdown including headers (# ## ###), bold (**text**), italic (*text*), lists, code blocks, tables, links, images, blockquotes, and more.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© 2026 Tanvir N Hasan · Questions? <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a></div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="https://tanvirnh.github.io/markdown-export-privacy-policy/" target="_blank" rel="noopener">Privacy</a>
+    <a href="mailto:tanvir4talk+appsupport@gmail.com">Email</a>
+  </nav>
+</footer>
+
+<script>
+  (function(){
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+    // Smooth in-page scroll for hash links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
