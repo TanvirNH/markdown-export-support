@@ -31,42 +31,52 @@
       {
         "@type": "Question",
         "name": "What file formats can I export to?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export supports exporting your documents to PDF, Word (.docx), and PNG image formats. Simply write your markdown and click the export button for your desired format." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export converts your document to PDF, PNG, real Word (.docx), HTML, and ePub 3.0. PDF and PNG are free; DOCX, HTML, ePub, batch export, and paper/margin selection are part of Markdown Export Pro." }
       },
       {
         "@type": "Question",
-        "name": "Can I open and edit existing markdown files?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use the \"Open .md\" button in the sidebar to open any existing markdown file. The content will be loaded into the editor and you can make changes, then export in your desired format." }
+        "name": "Did the freeze on long markdown files get fixed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The PDF pipeline paginates long documents manually using html2canvas and jsPDF, yielding to the runloop between pages so the UI stays responsive. Long documents that previously hung now complete normally." }
       },
       {
         "@type": "Question",
-        "name": "How do I adjust text formatting in exports?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use the control panel on the left sidebar. You can change the font face and adjust text size (8-16pt) to customize how your export looks." }
+        "name": "Can I open existing markdown files, or import several at once?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Open .md in the sidebar, drag a .md file onto the editor, or double-click a .md file in Finder. Pro users can also run Batch Export to convert an entire folder of markdown files to PDFs in one pass." }
       },
       {
         "@type": "Question",
-        "name": "Can I use images in my markdown?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use markdown image syntax: ![Alt text](image-url). You can use external image URLs. The app will render them in the preview and include them in your exports." }
+        "name": "How do I change paper size and margins?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open the Paper row in the sidebar to pick US Letter, A4, or US Legal with a Narrow, Normal, or Wide margin preset. Paper size and margins are part of Markdown Export Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support math equations and Mermaid diagrams?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Inline math uses $...$ or \\(...\\), display math uses $$...$$ or \\[...\\], rendered with the bundled KaTeX. Fenced ```mermaid code blocks become Mermaid diagrams. Both render in the preview and are included in PDF, HTML, DOCX, and ePub exports." }
+      },
+      {
+        "@type": "Question",
+        "name": "What themes are available?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Twelve export themes ship in the app: GitHub, Whitepaper, Report, Technical Docs, Minimal, Academic, Book, Modern, Letterhead, Resume, Dark, and the default. The default theme is free; the other eleven are part of Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Pro priced, and can I restore a previous purchase?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export Pro is sold via Apple StoreKit as a Monthly subscription, a Yearly subscription, or a one-time Lifetime purchase. Free users get five export credits up front; Pro is unlimited. Tap Restore Purchases in the upgrade window after signing in to the same Apple ID that bought Pro." }
       },
       {
         "@type": "Question",
         "name": "Is there a dark mode?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! Click the dark mode toggle button (◑) in the top right of the sidebar to switch between light and dark themes." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The dark-mode toggle at the top of the sidebar switches the editor and sidebar between light and dark, and the preference persists across launches. The export theme is independent — use the Dark export theme if you want a dark-styled PDF." }
       },
       {
         "@type": "Question",
         "name": "Does the app save my documents automatically?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export doesn't auto-save, but you can export your work anytime. We recommend using the \"Open .md\" button to load previously saved markdown files from your computer." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Markdown Export is an export tool, not an editor manager. Open your .md file from disk, edit it here, export to your chosen format, and keep saving your source in whatever editor you prefer. Nothing is written back to your original file without your action." }
       },
       {
         "@type": "Question",
-        "name": "Can I create multi-page documents?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! The preview shows page breaks automatically. You can see where page 1 ends and page 2 begins, so you can organize your content accordingly before exporting." }
-      },
-      {
-        "@type": "Question",
-        "name": "What markdown syntax is supported?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export supports standard markdown including headers (# ## ###), bold (**text**), italic (*text*), lists, code blocks, tables, links, images, blockquotes, and more." }
+        "name": "Does it work offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fully. All rendering libraries (marked, html2canvas, jsPDF, highlight.js, KaTeX, Mermaid, JSZip) are bundled inside the app, so the editor and every export format work without a network. The only network use is Apple StoreKit when you choose to buy or restore Pro." }
       }
     ]
   }
@@ -478,19 +488,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-          <span>Is there a Shortcuts action?</span>
-          <span class="faq-toggle" aria-hidden="true">▼</span>
-        </button>
-        <div class="faq-answer" id="faq-8" role="region">
-          <div class="faq-answer-inner">
-            <p>Yes. <strong>Export Markdown to PDF</strong> is published as an App Intent, so you can drop it into Shortcuts, the Services menu, or a Quick Action. Pass a <code>.md</code> file in and you get a rendered PDF out — useful for automation pipelines.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
+<div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
           <span>How is Pro priced, and can I restore a previous purchase?</span>
           <span class="faq-toggle" aria-hidden="true">▼</span>
