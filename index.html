@@ -5,23 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
   <meta name="color-scheme" content="dark" />
-  <title>Privacy Policy — Markdown Export for Mac</title>
-  <meta name="description" content="Privacy Policy for Markdown Export, a local-first macOS app. Learn how your documents and data are handled. No tracking, no analytics, no content collection." />
+  <title>Support & FAQ — Markdown Export for Mac</title>
+  <meta name="description" content="Get help with Markdown Export for Mac. Frequently asked questions about PDF, Word, and PNG exports, file formats, dark mode, and more." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tanvirnh.github.io/markdown-export/privacy.html" />
+  <link rel="canonical" href="https://tanvirnh.github.io/markdown-export/support.html" />
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Markdown Export" />
-  <meta property="og:title" content="Privacy Policy — Markdown Export for Mac" />
-  <meta property="og:description" content="Local-first Mac app. No tracking, no telemetry, no document content ever leaves your device." />
-  <meta property="og:url" content="https://tanvirnh.github.io/markdown-export/privacy.html" />
+  <meta property="og:title" content="Support & FAQ — Markdown Export for Mac" />
+  <meta property="og:description" content="Answers to common questions about Markdown Export for Mac, plus ways to contact support." />
+  <meta property="og:url" content="https://tanvirnh.github.io/markdown-export/support.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What file formats can I export to?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export converts your document to PDF, PNG, real Word (.docx), HTML, and ePub 3.0. PDF and PNG are free; DOCX, HTML, ePub, batch export, and paper/margin selection are part of Markdown Export Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "Did the freeze on long markdown files get fixed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The PDF pipeline paginates long documents manually using html2canvas and jsPDF, yielding to the runloop between pages so the UI stays responsive. Long documents that previously hung now complete normally." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I open existing markdown files, or import several at once?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Open .md in the sidebar, drag a .md file onto the editor, or double-click a .md file in Finder. Pro users can also run Batch Export to convert an entire folder of markdown files to PDFs in one pass." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I change paper size and margins?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open the Paper row in the sidebar to pick US Letter, A4, or US Legal with a Narrow, Normal, or Wide margin preset. Paper size and margins are part of Markdown Export Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support math equations and Mermaid diagrams?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Inline math uses $...$ or \\(...\\), display math uses $$...$$ or \\[...\\], rendered with the bundled KaTeX. Fenced ```mermaid code blocks become Mermaid diagrams. Both render in the preview and are included in PDF, HTML, DOCX, and ePub exports." }
+      },
+      {
+        "@type": "Question",
+        "name": "What themes are available?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Twelve export themes ship in the app: GitHub, Whitepaper, Report, Technical Docs, Minimal, Academic, Book, Modern, Letterhead, Resume, Dark, and the default. The default theme is free; the other eleven are part of Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Pro priced, and can I restore a previous purchase?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markdown Export Pro is sold via Apple StoreKit as a Monthly subscription, a Yearly subscription, or a one-time Lifetime purchase. Free users get five export credits up front; Pro is unlimited. Tap Restore Purchases in the upgrade window after signing in to the same Apple ID that bought Pro." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a dark mode?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The dark-mode toggle at the top of the sidebar switches the editor and sidebar between light and dark, and the preference persists across launches. The export theme is independent — use the Dark export theme if you want a dark-styled PDF." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the app save my documents automatically?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Markdown Export is an export tool, not an editor manager. Open your .md file from disk, edit it here, export to your chosen format, and keep saving your source in whatever editor you prefer. Nothing is written back to your original file without your action." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fully. All rendering libraries (marked, html2canvas, jsPDF, highlight.js, KaTeX, Mermaid, JSZip) are bundled inside the app, so the editor and every export format work without a network. The only network use is Apple StoreKit when you choose to buy or restore Pro." }
+      }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,12 +140,22 @@
       transition: color .2s ease;
     }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); outline: none; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent-2);
+      padding: 8px 16px; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 13px;
+      transition: background .2s;
+    }
+    .nav-cta:hover, .nav-cta:focus-visible { background: rgba(108,99,255,0.22); outline: none; }
 
     /* HERO */
-    .hero-section {
-      padding: 80px 24px 40px;
+    .hero {
+      padding: 90px 24px 40px;
       text-align: center;
-      background: radial-gradient(ellipse at top, rgba(108,99,255,0.12) 0%, transparent 60%);
+      background: radial-gradient(ellipse at top, rgba(108,99,255,0.14) 0%, transparent 65%);
     }
     .eyebrow {
       display: inline-block;
@@ -98,173 +167,163 @@
       margin-bottom: 20px;
     }
     h1 {
-      font-size: clamp(36px, 5.5vw, 58px);
+      font-size: clamp(40px, 6vw, 68px);
       font-weight: 900;
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-      margin-bottom: 16px;
+      letter-spacing: -2px;
+      line-height: 1.02;
+      margin-bottom: 18px;
       background: linear-gradient(135deg, #f0f0f8 0%, #a78bfa 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .last-updated {
-      color: var(--muted); font-size: 14px; font-weight: 500;
+    .hero-sub {
+      font-size: 18px; color: var(--text-dim);
+      max-width: 560px; margin: 0 auto; line-height: 1.6;
     }
 
-    /* Layout: content + sidebar TOC */
-    .doc-layout {
-      max-width: 1120px;
-      margin: 40px auto 60px;
-      padding: 0 24px;
+    main { max-width: 1120px; margin: 0 auto; padding: 40px 24px 80px; width: 100%; flex: 1; }
+
+    /* Support Cards */
+    .support-grid {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 56px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-bottom: 100px;
     }
-
-    aside.toc {
-      position: sticky; top: 96px;
-      font-size: 14px;
-    }
-    .toc-title {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .toc ol { list-style: none; padding: 0; counter-reset: toc; }
-    .toc li { counter-increment: toc; margin-bottom: 4px; }
-    .toc a {
-      display: block; padding: 8px 12px;
-      color: var(--text-dim); text-decoration: none;
-      border-radius: 8px; border-left: 2px solid transparent;
-      transition: background .2s, color .2s, border-color .2s;
-      line-height: 1.4;
-    }
-    .toc a:hover, .toc a:focus-visible {
-      background: var(--surface-2); color: var(--text); outline: none;
-    }
-    .toc a::before {
-      content: counter(toc) ". ";
-      color: var(--muted); margin-right: 4px;
-    }
-
-    main.doc-content { min-width: 0; }
-
-    .intro-callout {
-      background: linear-gradient(135deg, rgba(108,99,255,0.12) 0%, rgba(56,189,248,0.08) 100%);
-      border: 1px solid rgba(108,99,255,0.3);
+    .support-card {
+      background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 22px 26px;
-      margin-bottom: 40px;
-      display: flex; gap: 16px; align-items: flex-start;
+      padding: 36px 32px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      display: flex; flex-direction: column;
     }
-    .intro-callout .icon {
-      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-      background: rgba(52,211,153,0.15);
-      border: 1px solid rgba(52,211,153,0.3);
+    .support-card:hover {
+      border-color: rgba(108,99,255,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .support-card-icon {
+      width: 56px; height: 56px; border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px; color: var(--green);
+      font-size: 26px; margin-bottom: 20px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.25);
     }
-    .intro-callout p { color: var(--text); font-weight: 500; line-height: 1.6; }
+    .support-card-icon.email { background: rgba(56,189,248,0.12); border-color: rgba(56,189,248,0.25); }
+    .support-card-icon.docs { background: rgba(167,139,250,0.12); border-color: rgba(167,139,250,0.25); }
+    .support-card-icon.bug { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.25); }
 
-    .policy-section {
-      margin-bottom: 48px;
-      scroll-margin-top: 100px;
+    .support-card h3 {
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 10px; letter-spacing: -0.3px;
     }
-    .policy-section h2 {
-      font-size: 26px; font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 12px;
+    .support-card p {
+      color: var(--text-dim); font-size: 14.5px;
+      line-height: 1.65; margin-bottom: 24px;
+      flex: 1;
     }
-    .policy-section h2::before {
-      content: '';
-      width: 4px; height: 22px;
-      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
-      border-radius: 2px;
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 50px;
+      font-weight: 600; font-size: 14px; text-decoration: none;
+      transition: transform .2s, background .2s, box-shadow .2s;
+      border: 1px solid transparent;
+      cursor: pointer; width: 100%;
+      font-family: inherit;
     }
-    .policy-section h3 {
-      font-size: 17px; font-weight: 700;
-      margin-top: 24px; margin-bottom: 10px;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-    .policy-section p {
-      color: var(--text-dim);
-      margin-bottom: 14px;
-      font-size: 15.5px;
-      line-height: 1.75;
-    }
-    .policy-section ul {
-      margin-left: 0; padding-left: 0;
-      list-style: none;
-      margin-bottom: 16px;
-    }
-    .policy-section li {
-      position: relative;
-      padding-left: 26px;
-      margin-bottom: 10px;
-      line-height: 1.7;
-      font-size: 15px;
-      color: var(--text-dim);
-    }
-    .policy-section li::before {
-      content: '';
-      position: absolute;
-      left: 6px; top: 11px;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent-2);
-    }
-    .policy-section strong { color: var(--text); font-weight: 600; }
-    .policy-section a {
-      color: var(--accent-2);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(167,139,250,0.3);
-      transition: color .2s, border-color .2s;
-    }
-    .policy-section a:hover, .policy-section a:focus-visible {
-      color: var(--accent-3); border-color: var(--accent-3); outline: none;
-    }
-    .policy-section code {
-      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      background: rgba(108,99,255,0.12); color: var(--accent-2);
-      padding: 2px 7px; border-radius: 6px; font-size: 13px;
-    }
-
-    /* Contact block */
-    .contact-section {
-      margin-top: 60px;
-      background: linear-gradient(180deg, rgba(108,99,255,0.14) 0%, rgba(108,99,255,0.04) 100%);
-      border: 1px solid rgba(108,99,255,0.35);
-      border-radius: var(--radius);
-      padding: 40px;
-      text-align: center;
-    }
-    .contact-section h2 {
-      font-size: 26px; font-weight: 800; letter-spacing: -0.5px;
-      margin-bottom: 12px; color: var(--text);
-    }
-    .contact-section p {
-      color: var(--text-dim); margin-bottom: 24px;
-      font-size: 15.5px; max-width: 520px; margin-left: auto; margin-right: auto;
-    }
-    .btn-email {
-      display: inline-flex; align-items: center; gap: 10px;
+    .btn-primary {
       background: var(--accent); color: #fff;
-      padding: 14px 28px; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 15px;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 8px 32px rgba(108,99,255,0.4);
+      box-shadow: 0 6px 20px rgba(108,99,255,0.35);
     }
-    .btn-email:hover, .btn-email:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(108,99,255,0.55); outline: none;
+    .btn-primary:hover, .btn-primary:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(108,99,255,0.5); outline: none;
     }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+    .btn-secondary:hover, .btn-secondary:focus-visible {
+      background: var(--surface-3);
+      border-color: rgba(108,99,255,0.4); outline: none;
+    }
+
+    /* FAQ */
+    .faq-section { margin-bottom: 40px; }
+    .faq-section-header { text-align: center; margin-bottom: 48px; }
+    .faq-section-header p.section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent-2);
+      margin-bottom: 14px;
+    }
+    .faq-section-header h2 {
+      font-size: clamp(32px, 4.5vw, 46px);
+      font-weight: 800; letter-spacing: -1px; line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .faq-section-header p.sub {
+      color: var(--text-dim); font-size: 16px;
+      max-width: 520px; margin: 0 auto;
+    }
+
+    .faq-container { max-width: 780px; margin: 0 auto; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .faq-item:hover { border-color: var(--border-strong); }
+    .faq-item.active {
+      border-color: rgba(108,99,255,0.4);
+      background: var(--surface-2);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--text);
+      user-select: none;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-family: inherit;
+      transition: color .2s;
+    }
+    .faq-question:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .faq-toggle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(108,99,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--accent-2);
+      transition: transform 0.3s ease, background .2s;
+      flex-shrink: 0;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+      background: rgba(108,99,255,0.25);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 22px;
+      color: var(--text-dim);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer { max-height: 800px; }
 
     /* FOOTER */
     footer {
@@ -279,25 +338,21 @@
     footer a:hover, footer a:focus-visible { color: var(--text); outline: none; }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 
-    @media screen and (max-width: 900px) {
-      .doc-layout { grid-template-columns: 1fr; gap: 32px; }
-      aside.toc { position: static; }
-      .toc ol { display: flex; flex-wrap: wrap; gap: 6px; }
-      .toc li { margin: 0; }
-      .toc a { padding: 6px 12px; background: var(--surface-2); border-radius: 50px; border-left: none; font-size: 13px; }
-    }
     @media screen and (max-width: 768px) {
       nav.primary { padding: 14px 20px; }
       .nav-links { gap: 16px; }
-      .hero-section { padding: 60px 20px 32px; }
+      .hero { padding: 70px 20px 30px; }
+      main { padding: 30px 20px 60px; }
+      .support-grid { grid-template-columns: 1fr; }
+      .support-card { padding: 28px 24px; }
       footer { flex-direction: column; text-align: center; padding: 32px 20px; }
       .footer-links { justify-content: center; }
-      .contact-section { padding: 28px 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       html { scroll-behavior: auto; }
+      .faq-answer { transition: none; }
     }
   </style>
 </head>
@@ -312,146 +367,213 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="https://tanvirnh.github.io/markdown-export-support/" target="_blank" rel="noopener">Support</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://tanvirnh.github.io/markdown-export-privacy-policy/" target="_blank" rel="noopener">Privacy</a></li>
   </ul>
+  <a href="mailto:tanvir4talk+appsupport@gmail.com" class="nav-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Contact
+  </a>
 </nav>
 
-<section class="hero-section">
-  <span class="eyebrow">Legal</span>
-  <h1>Privacy Policy</h1>
-  <p class="last-updated">Last updated: May 2026</p>
+<section class="hero">
+  <span class="eyebrow">Support</span>
+  <h1>How Can We Help?</h1>
+  <p class="hero-sub">Get support for Markdown Export. We're here to help you with any questions or issues.</p>
 </section>
 
-<div class="doc-layout">
-  <aside class="toc" aria-label="Table of contents">
-    <p class="toc-title">On this page</p>
-    <ol>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#data-collection">What We Collect</a></li>
-      <li><a href="#export-processing">Export Processing</a></li>
-      <li><a href="#third-party">Third-Party Services</a></li>
-      <li><a href="#security">Security & Data Protection</a></li>
-      <li><a href="#support-inquiries">Support Inquiries</a></li>
-      <li><a href="#changes">Changes to This Policy</a></li>
-    </ol>
-  </aside>
+<main id="main">
 
-  <main class="doc-content" id="main">
+  <section id="support" class="support-grid" aria-label="Support options">
+    <article class="support-card">
+      <div class="support-card-icon email" aria-hidden="true">✉️</div>
+      <h3>Email Support</h3>
+      <p>Have a question or need help? Send us an email and we'll get back to you as soon as possible.</p>
+      <a href="mailto:tanvir4talk+appsupport@gmail.com" class="btn btn-primary">Send Email</a>
+    </article>
 
-    <section class="policy-section" id="overview">
-      <h2>Overview</h2>
-      <p>At Markdown Export, we take your privacy seriously. This Privacy Policy explains how our macOS application handles your data and personal information.</p>
-      <div class="intro-callout">
-        <div class="icon" aria-hidden="true">✓</div>
-        <p>Markdown Export is a local-first application for macOS. Your documents and data stay on your device.</p>
+    <article class="support-card">
+      <div class="support-card-icon docs" aria-hidden="true">📚</div>
+      <h3>Documentation</h3>
+      <p>Learn how to use all features of Markdown Export with our detailed guides and tutorials.</p>
+      <a href="#faq" class="btn btn-secondary">View Docs</a>
+    </article>
+
+    <article class="support-card">
+      <div class="support-card-icon bug" aria-hidden="true">🐛</div>
+      <h3>Report a Bug</h3>
+      <p>Found an issue? Let us know at tanvir4talk+appsupport@gmail.com and we'll fix it right away.</p>
+      <a href="mailto:tanvir4talk+appsupport@gmail.com?subject=Bug%20Report&body=Please%20describe%20the%20bug%20you%20found..." class="btn btn-secondary">Report Bug</a>
+    </article>
+  </section>
+
+  <section id="faq" class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-section-header">
+      <p class="section-label">FAQ</p>
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <p class="sub">Everything you need to know about Markdown Export.</p>
+    </div>
+
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+          <span>What file formats can I export to?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-1" role="region">
+          <div class="faq-answer-inner">
+            <p>Markdown Export converts your document to <strong>PDF</strong>, <strong>PNG</strong>, real <strong>Word (.docx)</strong>, <strong>HTML</strong>, and <strong>ePub 3.0</strong>. PDF and PNG are free; DOCX, HTML, ePub, batch export, and paper/margin selection are part of Markdown Export Pro.</p>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="policy-section" id="data-collection">
-      <h2>What Data We Collect</h2>
-      <h3>Information You Create</h3>
-      <p>Markdown Export processes markdown documents that you create or open within the application. This content:</p>
-      <ul>
-        <li>Remains stored locally on your macOS device</li>
-        <li>Is not transmitted to our servers</li>
-        <li>Is not collected, tracked, or stored by us</li>
-        <li>Is used only to generate exports (PDF, Word, HTML, ePub, or PNG)</li>
-      </ul>
-      <h3>What We Do Not Collect</h3>
-      <p>We, the developer of Markdown Export, do not collect, track, or store:</p>
-      <ul>
-        <li>Your name, email, or contact information (unless you contact support)</li>
-        <li>Usage analytics or telemetry</li>
-        <li>Device identifiers</li>
-        <li>Location data or browsing history</li>
-        <li>The contents of any document you create, open, or export</li>
-      </ul>
-      <p>Note: the app does not make outbound network requests in normal use. The only third-party endpoint involved is Apple's StoreKit for optional in-app purchases. See "Third-Party Services" below for details.</p>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+          <span>I imported a long markdown file and Export PDF used to freeze — is that fixed?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-2" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. The PDF pipeline now paginates long documents manually using <code>html2canvas</code> + <code>jsPDF</code>, with a per-page yield to the runloop so the UI stays responsive. Documents that previously hung on export — Testing.md, AppPreviewScript.md, anything spanning many pages — should now complete normally. If you do hit a problem, please email us with the file so we can reproduce.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="policy-section" id="export-processing">
-      <h2>Export Processing</h2>
-      <p>When you export your markdown document, every conversion happens locally on your Mac:</p>
-      <ul>
-        <li><strong>PDF:</strong> Rendered locally with the bundled <code>html2canvas</code> + <code>jsPDF</code> libraries (multi-page paginated on-device).</li>
-        <li><strong>Word (.docx):</strong> Produced locally as real Office Open XML via Apple's built-in <code>NSAttributedString</code> converter — not an HTML-with-.doc rename.</li>
-        <li><strong>HTML:</strong> Generated locally as a fully styled single-file document.</li>
-        <li><strong>ePub 3.0:</strong> Packaged locally as a standards-compliant <code>.epub</code> using the bundled <code>JSZip</code> library.</li>
-        <li><strong>PNG:</strong> Rendered locally as a high-resolution image of the preview.</li>
-        <li><strong>Batch Export (Pro):</strong> Iterates the files you select and writes the PDFs to the folder you choose — none of those files are read or transmitted by us.</li>
-      </ul>
-      <p>All export files are generated on your device and saved to a location you choose. We have no access to these files.</p>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+          <span>Can I open existing markdown files, or import several at once?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-3" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. Click <strong>Open .md</strong> in the sidebar, drag a <code>.md</code> file onto the editor, or double-click a <code>.md</code> file in Finder to open it in Markdown Export. Pro users can also run <strong>Batch Export</strong> to turn a folder of markdown files into a folder of PDFs in one pass.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="policy-section" id="third-party">
-      <h2>Third-Party Services</h2>
-      <h3>Bundled Open-Source Libraries</h3>
-      <p>Markdown Export ships its rendering libraries <strong>inside the app bundle</strong>. They run entirely on your Mac and never make network requests. The app does <em>not</em> use any content-delivery network (CDN) at runtime; nothing is downloaded when you open or use it:</p>
-      <ul>
-        <li><strong>marked</strong> — Markdown parsing</li>
-        <li><strong>html2canvas</strong> — Preview-to-canvas rendering for PDF and PNG export</li>
-        <li><strong>jsPDF</strong> — PDF assembly (bundled together with html2pdf.js)</li>
-        <li><strong>highlight.js</strong> + GitHub style sheet — Code syntax highlighting</li>
-        <li><strong>KaTeX</strong> + auto-render — LaTeX math rendering (<code>$...$</code>, <code>$$...$$</code>)</li>
-        <li><strong>Mermaid</strong> — Diagram rendering for fenced <code>mermaid</code> code blocks</li>
-        <li><strong>JSZip</strong> — ePub packaging</li>
-      </ul>
-      <p>Because all libraries are bundled, Markdown Export works offline and your IP address, User-Agent, document content, and file names are not exposed to any third-party server during normal use.</p>
-      <h3>Apple Services</h3>
-      <p>If you choose to upgrade to Markdown Export Pro (Monthly, Yearly, or Lifetime), the in-app purchase is processed by Apple's StoreKit. Payment, billing, and subscription management are handled by Apple under <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We never see your payment information. Receipt verification used to restore purchases is handled by StoreKit on-device.</p>
-      <p>If you tap "Review" in the app, macOS may show Apple's standard rating prompt or open the Mac App Store. Your interaction with that prompt is governed by Apple's privacy policy.</p>
-      <h3>Outbound Image URLs in Your Documents</h3>
-      <p>If <em>you</em> embed an image with a remote URL such as <code>![alt](https://example.com/pic.png)</code>, the preview pane (a sandboxed WebKit view inside the app) fetches that image from the URL you specified, the same way any browser would. That request is made directly to the third-party host you chose — Markdown Export does not proxy, log, or share it. You control which URLs appear in your documents.</p>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+          <span>How do I change paper size and margins?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-4" role="region">
+          <div class="faq-answer-inner">
+            <p>Open the <strong>Paper</strong> row in the sidebar to pick US Letter, A4, or US Legal with a Narrow / Normal / Wide margin preset. Paper size and margins are part of Markdown Export Pro.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="policy-section" id="security">
-      <h2>Security & Data Protection</h2>
-      <p>Your documents are protected by:</p>
-      <ul>
-        <li>Local processing — all document parsing, PDF generation, image rendering, and Word export happens on your Mac</li>
-        <li>No transmission of document content — your text and exports never leave your device</li>
-        <li>macOS App Sandbox and Hardened Runtime — the app runs with strict system-enforced isolation</li>
-        <li>Your control over where files are saved via the standard macOS save panel</li>
-      </ul>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+          <span>Does it support math equations and Mermaid diagrams?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-5" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. Inline math goes in <code>$...$</code> or <code>\(...\)</code>, display math in <code>$$...$$</code> or <code>\[...\]</code> — rendered with the bundled KaTeX. Fenced <code>```mermaid</code> code blocks become Mermaid diagrams. Both render in the preview and are baked into PDF, HTML, DOCX, and ePub exports.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="policy-section" id="support-inquiries">
-      <h2>Support Inquiries</h2>
-      <p>If you contact us for support, we may collect:</p>
-      <ul>
-        <li>Your email address (provided by you)</li>
-        <li>Details about your issue or question</li>
-        <li>Information needed to help resolve your issue</li>
-      </ul>
-      <p>This information is used solely to assist you and is not shared with third parties.</p>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+          <span>What themes are available?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-6" role="region">
+          <div class="faq-answer-inner">
+            <p>Twelve export themes ship in the app, grouped by use: GitHub, Whitepaper, Report, Technical Docs, Minimal, Academic, Book, Modern, Letterhead, Resume, Dark, and the default. The default theme is free; the other eleven are part of Pro.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="policy-section" id="changes">
-      <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy as needed. When we make material changes, we will update the "Last updated" date above. Continued use of Markdown Export after changes indicates your acceptance of the updated policy.</p>
-    </section>
+<div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
+          <span>How is Pro priced, and can I restore a previous purchase?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-9" role="region">
+          <div class="faq-answer-inner">
+            <p>Markdown Export Pro is sold via Apple StoreKit as a Monthly subscription, a Yearly subscription, or a one-time Lifetime purchase. Free users get five export credits up front; Pro is unlimited. Tap <strong>Restore Purchases</strong> in the upgrade window after signing in to the same Apple ID that bought Pro.</p>
+          </div>
+        </div>
+      </div>
 
-    <section class="contact-section" id="contact">
-      <h2>Questions?</h2>
-      <p>If you have any questions about this Privacy Policy or how Markdown Export handles your data, please don't hesitate to reach out.</p>
-      <a href="mailto:tanvir4talk+appsupport@gmail.com" class="btn-email">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact Us
-      </a>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
+          <span>Is there a dark mode?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-10" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. The dark-mode toggle (◑) at the top of the sidebar flips the editor and sidebar between light and dark, and the preference persists across launches. The export theme is independent — use the <strong>Dark</strong> export theme if you want a dark-styled PDF too.</p>
+          </div>
+        </div>
+      </div>
 
-  </main>
-</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
+          <span>Does the app save my documents automatically?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-11" role="region">
+          <div class="faq-answer-inner">
+            <p>No — Markdown Export is an export tool, not an editor manager. Open your <code>.md</code> file from disk, edit it here, export to your chosen format, and keep saving your source in whatever editor you prefer. Nothing is written back to your original file without your action.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
+          <span>Does it work offline?</span>
+          <span class="faq-toggle" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-answer" id="faq-12" role="region">
+          <div class="faq-answer-inner">
+            <p>Fully. All rendering libraries (marked, html2canvas, jsPDF, highlight.js, KaTeX, Mermaid, JSZip) are bundled inside the app, so the editor and every export format work without a network. The only network use is Apple StoreKit when you choose to buy or restore Pro.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div>© 2026 Tanvir N Hasan · Markdown Export</div>
   <nav class="footer-links" aria-label="Footer">
     <a href="index.html">Home</a>
-    <a href="https://tanvirnh.github.io/markdown-export-support/" target="_blank" rel="noopener">Support</a>
+    <a href="https://tanvirnh.github.io/markdown-export-privacy-policy/" target="_blank" rel="noopener">Privacy</a>
     <a href="mailto:tanvir4talk+appsupport@gmail.com">Email</a>
   </nav>
 </footer>
+
+<script>
+  (function(){
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+    // Smooth in-page scroll for hash links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
